@@ -3,8 +3,8 @@
 <c:import url="../layout/app.jsp">
     <c:param name="content">
         <c:choose>
-            <c:when test="${message != null}">
-                <h2>id : ${task.id} のタスク編集ページ</h2>
+            <c:when test="${task != null}">
+                <h2>id : ${task.id} のメッセージ編集ページ</h2>
 
                 <form method="POST" action="${pageContext.request.contextPath}/update">
                     <c:import url="_form.jsp" />
@@ -16,9 +16,9 @@
                     <input type="hidden" name="_token" value="${_token}" />
                 </form>
                 <script>
-                function confirmDestroy() {
-                    if(confirm("本当に削除してよろしいですか？")) {
-                        document.forms[1].submit();
+                    function confirmDestroy() {
+                        if(confirm("本当に削除してよろしいですか？")) {
+                            document.forms[1].submit();
                         }
                     }
                 </script>
